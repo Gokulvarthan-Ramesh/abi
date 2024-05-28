@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+        .font-fancy {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+    <link rel="stylesheet" href="style.js">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: { "50": "#fff5f0", "100": "#ffd6c2", "200": "#feb795", "300": "#fe9868", "400": "#fd783c", "500": "#fb580f", "600": "#db4603", "700": "#b03802", "800": "#862b01", "900": "#5a1d00", "950": "#2f0f00" }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header id="header"
+        class="w-dvw fixed top-0 left-1/2 -translate-x-1/2 z-[1000] py-4 bg-accent-200 bg-opacity-40 transition-colors duration-300">
+        <div class="max-w-[120rem] text-gray-50 px-6 md:px-8 lg:px-10">
+            <nav class="w-full flex flex-row items-center font-sans">
+                <a class="text-gray-50" href="/">
+                    <img src="assests/logo/abi-logo.jpg" alt="logo" class="h-10">
+                </a>
+                <div class="flex-1 relative hidden md:flex items-center justify-center">
+                    <ul class="mx-auto inline-flex gap-6 text-sm font-light">
+                        <li><a class="text-white hover:text-accent-500 font-bold" href="#Home">Home</a></li>
+                        <li><a class="text-white hover:text-accent-500 font-bold" href="#Services">Services</a></li>
+                        <li><a class="text-white hover:text-accent-500 font-bold" href="#About">About</a></li>
+                        <li><a class="text-white hover:text-accent-500 font-bold" href="#Gallery">Gallery</a></li>
+                    </ul>
+                    <ul class="absolute right-0">
+                        <li class="relative fade-out">
+                            <a id="contact-button"
+                                class="h-10 rounded-lg flex items-center justify-center text-base bg-accent-500 leading-none px-12 uppercase hover:bg-white hover:text-accent-500 transition-colors"
+                                href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div>
+        <section id="Home" class="h-screen bg-red-100 max-h-[80rem] relative">
+            <div class="absolute inset-0 z-[1]">
+                <div class="relative h-full w-full">
+                    <img class="h-full w-full object-cover" src="assests/images/home.jpg" alt="">
+
+                </div>
+
+            </div>
+            <div class="mx-auto h-full relative z-[2] px-6 md:px-8 lg:px-10">
+                <div class="h-full w-full flex flex-col relative space-y-6">
+                    <div class="mt-auto mb-0 text-gray-50 md:pb-36 space-y-6">
+                        <span
+                            class="md:text-5xl max-w-[30rem] font-bold text-accent-500 text-center tracking-wide leading-tight shadow-lg font-fancy text-shadow-white animate-on-visible animate-on-scroll">
+                            Abi's Design Studio
+                        </span>
+                        <h1 class="text-3xl md:text-5xl max-w-[30rem] font-medium animate-on-visible">Tradition meets
+                            elegance seamlessly</h1>
+                        <p
+                            class="max-w-[30rem] font-light ml-4 before:content-[''] relative before:absolute before:w-px before:h-full before:left-0 before:top-0 before:-translate-x-4 before:bg-accent-500 md:text-base text-sm animate-on-visible">
+                            In our design sanctuary, each stitch we meticulously place,
+                            Every swirl of our brush, a testament to grace.
+                            Where tradition's timeless charm intertwines with innovation's embrace,
+                            Crafting elegance that resonates, leaving a lasting trace.
+                        </p>
+                        <div class="md:flex-row flex-col flex gap-4 animate-on-visible">
+                            <button
+                                class="inline-block text-base font-medium px-12 py-2 bg-accent-400 rounded-lg cursor-pointer">Explore</button>
+                            <button
+                                class="inline-block text-base font-medium px-12 py-2 border border-accent-400 rounded-lg text-accent-400 cursor-pointer bg-gray-50/10 backdrop-blur-3xl">About
+                                Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Services" class="bg-fixed h-screen bg-white">
+            <!-- <div class="container mx-auto  h-screen flex flex-col overflow-y-auto">
+                <div class="">
+        
+                
+                    <div class="bg-white  p-6 shadow-md w-full md:w-1/2">
+                        <h2 class="text-xl font-bold mb-2">Hair Cuts & Style</h2>
+                        <ul>
+                            <li>Women's Haircut: $55+</li>
+                            <li>Men's Haircut: $75+</li>
+                            <li>Up Do Style: $35+</li>
+                            <li>Half-Up do style: $45+</li>
+                        </ul>
+                    </div>
+        
+                   
+                    <div class="bg-white  p-6  shadow-md w-full md:w-1/2 ml-auto">
+                        <h2 class="text-xl font-bold mb-2">Hair dyed</h2>
+                        <ul>
+                            <li>Dye L'Oréal: $55+</li>
+                            <li>Dye Davines: $75+</li>
+                            <li>Dye GoldWell: $35+</li>
+                            <li>Dye Oriental: $45+</li>
+                        </ul>
+                    </div>
+        
+                   
+                    <div class="bg-white  p-6  shadow-md w-full md:w-1/2">
+                        <h2 class="text-xl font-bold mb-2">Hair Care</h2>
+                        <ul>
+                            <li>Shampoo & Blow Dry: $55+</li>
+                            <li>Personalized Color: $75+</li>
+                            <li>Formal Styling: $35+</li>
+                            <li>Bridal & Wedding: $45+</li>
+                        </ul>
+                    </div>
+        
+                </div>
+            </div> -->
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-3xl font-bold mt-8">
+                    <span class="text-accent-500">OUR</span>
+                    <span style="color: #2e130e;">SERVICES</span>
+                </h1>
+                <div class="text-base text-gray-700 my-4 text-center mx-auto max-w-4xl px-4">
+                    <span class="text-accent-500 font-bold text-xl hover:text-accent-300">Abi's Design Studio</span>
+                    excels in Mehandi and Aari works, crafting intricate designs for Bridal, Professional, Festivals,
+                    and more. Trust us to adorn you with the finest artistry in these traditional crafts.
+
+                </div>
+
+
+                <div class="container  px-28 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                        <!-- Wedding Mehendi -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg cursor-pointer hover:shadow-accent-500 overflow-hidden">
+                            <img class="w-full"
+                                src="https://img.freepik.com/free-photo/mehndi-wedding-ornament-hands-drawn-by-henna_8353-9769.jpg?t=st=1716707839~exp=1716711439~hmac=ff18d6cfbb5f709c96f93261d274d7614e5e9ca6420f4f54304916cecffd48ea&w=996"
+                                alt="Wedding Mehendi">
+                            <div class="p-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-accent-500">★★★★☆</span>
+                                    <span class="text-gray-600 flex-grow ml-24">Price Starting from: Rs4000</span>
+                                </div>
+
+
+                                <h2 class="text-lg font-bold mt-2 text-left">WEDDING MEHANDI</h2>
+                                <p class="text-gray-600 mt-2 text-left">Although, the formal was primarily observed in
+                                    parts of
+                                    north India, Rajasthan, Gujarat, Uttar Pradesh, Bihar, Madhya Pradesh and Punjab</p>
+                                <button class="mt-4 bg-accent-500 text-white py-2 px-4 rounded block text-left">Get
+                                    Services</button>
+                            </div>
+                        </div>
+                        <!-- Festival Mehendi -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-accent-500">
+                            <img class="w-full"
+                                src="https://img.freepik.com/free-photo/indian-tradition-putting-wedding-bangles_8353-9785.jpg?t=st=1716708338~exp=1716711938~hmac=4e8e4f7682e8231042e3040af9b482b7a9b69722989107d11a2c3a8edd268cc7&w=996"
+                                alt="Festival Mehendi">
+                            <div class="p-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-accent-500">★★★★☆</span>
+                                    <span class="text-gray-600 flex-grow ml-24">Price Starting from: Rs4000</span>
+                                </div>
+                                <h2 class="text-lg font-bold mt-2 text-left">FESTIVAL MEHANDI</h2>
+                                <p class="text-gray-600 mt-2 text-left">Mehendi is very popular with both males and
+                                    females also
+                                    as a conditioner and dye for the frizzle.</p>
+                                <button class="mt-4 bg-accent-500 text-white py-2 px-4 rounded block text-left">Get
+                                    Services</button>
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-accent-500">
+                            <img class="w-full"
+                                src="https://img.freepik.com/free-photo/indian-tradition-putting-wedding-bangles_8353-9785.jpg?t=st=1716708338~exp=1716711938~hmac=4e8e4f7682e8231042e3040af9b482b7a9b69722989107d11a2c3a8edd268cc7&w=996"
+                                alt="Festival Mehendi">
+                            <div class="p-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-accent-500">★★★★☆</span>
+                                    <span class="text-gray-600 flex-grow ml-24">Price Starting from: Rs4000</span>
+                                </div>
+                                <h2 class="text-lg font-bold mt-2 text-left">PROFESSIONAL MEHANDI</h2>
+                                <p class="text-gray-600 mt-2 text-left">Professional Mehendi Our corporate events have a
+                                    purified recourse. Give us caterers a reason to honor—a effect pierce,</p>
+                                <button class="mt-4 bg-accent-500 text-white py-2 px-4 rounded block text-left">Get
+                                    Services</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="py-12 bg-black">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold text-accent-500">Why Choose Us?</h2>
+                <p class="mt-2 text-gray-300">We've got the freshest designs for Aari and Mehandi that our clients love!
+                </p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 px-12">
+                    <!-- Low Cost Services -->
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-accent-400 rounded-full p-4 mb-2 transition-transform duration-300 hover:scale-110">
+                            <img src="assests/icons/save-money.png" alt="Low Cost Services"
+                                class="w-12 h-12 transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <h3 class="text-xl font-bold">Low Cost Services</h3>
+                        <p class="text-base text-white my-2 text-center mx-auto max-w-2xl px-4">
+                            We've crafted top-notch, budget-friendly services that have left our clients thoroughly
+                            satisfied.
+                        </p>
+
+                    </div>
+                    <!-- Creative Work -->
+                    <div class="flex flex-col items-center ">
+                        <div
+                            class="bg-accent-400 rounded-full p-4 mb-2 transition-transform duration-300 hover:scale-110">
+                            <img src="assests/icons/business.png" alt="Creative Work"
+                                class="w-12 h-12 transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <h3 class="text-xl font-bold">Creative Work</h3>
+                        <p class="text-base text-white my-2 text-center mx-auto max-w-2xl px-4">Our designs are
+                            unparalleled, crafted by our skilled designers for maximum impact.
+                        </p>
+                    </div>
+                    <!-- Customers Support 24x7 -->
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-accent-400 rounded-full p-4 mb-2 transition-transform duration-300 hover:scale-110">
+                            <img src="assests/icons/support.png" alt="Customers Support 24x7"
+                                class="w-12 h-12 transition-transform duration-300 hover:scale-110">
+                        </div>
+                        <h3 class="text-xl font-bold">Customers Support 24x7</h3>
+                        <p class="text-base text-white my-2 text-center mx-auto max-w-2xl px-4">We offer art services to
+                            help you with any problems you have over the phone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="About" class="h-screen bg-green-100"></section>
+        <section id="Gallery" class="h-screen bg-yellow-100"></section>
+    </div>
+
+</body>
+<script src="style.js"></script>
+
+</html>

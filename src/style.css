@@ -1,0 +1,46 @@
+.fade-out {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-out.hide {
+  opacity: 0;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.bg-fixed {
+  /* background-image: url('assests/images/home1.jpg');  */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.transition-colors {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes slideInFromTop {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-visible {
+  opacity: 0;
+}
+
+.animated {
+  animation: slideInFromTop 1s ease forwards;
+}
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.fade-in {
+  opacity: 1;
+}
+
+.glide__track {
+  height: auto !important;
+}
