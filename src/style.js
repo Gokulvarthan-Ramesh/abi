@@ -64,80 +64,62 @@ addAnimation();
 
 //service scroll right
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", function() {
+    const headerLinks = document.querySelectorAll("#header a[href^='#']");
+    
+    headerLinks.forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const targetOffset = targetElement.getBoundingClientRect().top + window.scrollY;
+                const startPosition = window.scrollY;
+                const distance = targetOffset - startPosition;
+                const duration = 1000; // Adjust duration as needed (in milliseconds)
+                const startTime = performance.now();
+                
+                function scrollStep(timestamp) {
+                    const elapsedTime = timestamp - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    window.scrollTo(0, startPosition + distance * progress);
+                    
+                    if (progress < 1) {
+                        window.requestAnimationFrame(scrollStep);
+                    }
+                }
+                
+                window.requestAnimationFrame(scrollStep);
+            }
         });
     });
 });
 
-// header scroll color
-document.addEventListener("scroll", function() {
+// // header scroll color
+document.addEventListener("scroll", function () {
     const header = document.getElementById("header");
-    const homeSection = document.getElementById("Home");
-    const servicesSection = document.getElementById("Services");
-    const aboutSection = document.getElementById("About");
-    const gallerySection = document.getElementById("Gallery");
+    const sections = [
+        { id: "Home", classList: ["bg-black"], exclude: ["bg-accent-200", "bg-accent-500", "bg-green-500", "bg-yellow-500"] },
+        { id: "Services", classList: ["bg-black"], exclude: ["bg-accent-200", "bg-accent-500", "bg-green-500"] },
+        { id: "About", classList: ["bg-black"], exclude: ["bg-accent-200", "bg-accent-500", "bg-green-500", "bg-yellow-500"] },
+        { id: "Testimonials", classList: ["bg-black"], exclude: ["bg-accent-200", "bg-accent-500", "bg-green-500", "bg-yellow-500"] },
+        { id: "Gallery", classList: ["bg-black"], exclude: ["bg-accent-200", "bg-accent-500", "bg-green-500"] }
+    ];
 
-    const homeTop = homeSection.getBoundingClientRect().top;
-    const servicesTop = servicesSection.getBoundingClientRect().top;
-    const aboutTop = aboutSection.getBoundingClientRect().top;
-    const galleryTop = gallerySection.getBoundingClientRect().top;
+    sections.forEach(section => {
+        const sectionElement = document.getElementById(section.id);
+        const sectionTop = sectionElement.getBoundingClientRect().top;
+        const sectionBottom = sectionTop + sectionElement.offsetHeight;
 
-    if (homeTop <= 0 && homeTop + homeSection.offsetHeight > 0) {
-        header.classList.add("bg-accent-200");
-        header.classList.remove("bg-blue-500", "bg-green-500", "bg-yellow-500");
-    } else if (servicesTop <= 0 && servicesTop + servicesSection.offsetHeight > 0) {
-        header.classList.add("bg-black");
-        header.classList.remove("bg-accent-200", "bg-green-500", "bg-yellow-500");
-    } else if (aboutTop <= 0 && aboutTop + aboutSection.offsetHeight > 0) {
-        header.classList.add("bg-green-500");
-        header.classList.remove("bg-accent-200", "bg-blue-500", "bg-yellow-500");
-    } else if (galleryTop <= 0 && galleryTop + gallerySection.offsetHeight > 0) {
-        header.classList.add("bg-yellow-500");
-        header.classList.remove("bg-accent-200", "bg-blue-500", "bg-green-500");
-    }
+        if (sectionTop <= 0 && sectionBottom > 0) {
+            header.classList.add(...section.classList);
+            header.classList.remove(...section.exclude);
+        }
+    });
 });
-  // for button change
 
-  document.addEventListener("scroll", function() {
-    const header = document.getElementById("header");
-    const contactButton = document.getElementById("contact-button");
-    const homeSection = document.getElementById("Home");
-    const servicesSection = document.getElementById("Services");
-    const aboutSection = document.getElementById("About");
-    const gallerySection = document.getElementById("Gallery");
-
-    const homeTop = homeSection.getBoundingClientRect().top;
-    const servicesTop = servicesSection.getBoundingClientRect().top;
-    const aboutTop = aboutSection.getBoundingClientRect().top;
-    const galleryTop = gallerySection.getBoundingClientRect().top;
-
-    if (homeTop <= 0 && homeTop + homeSection.offsetHeight > 0) {
-        header.classList.add("bg-accent-200");
-        header.classList.remove("bg-accent-500", "bg-green-500", "bg-yellow-500");
-        contactButton.classList.add("bg-accent-500");
-        contactButton.classList.remove("bg-accent-700", "bg-green-700", "bg-yellow-700");
-    } else if (servicesTop <= 0 && servicesTop + servicesSection.offsetHeight > 0) {
-        header.classList.add("bg-accent-500");
-        header.classList.remove("bg-accent-200", "bg-green-500", "bg-yellow-500");
-        contactButton.classList.add("bg-accent-700");
-        contactButton.classList.remove("bg-accent-500", "bg-green-700", "bg-yellow-700");
-    } else if (aboutTop <= 0 && aboutTop + aboutSection.offsetHeight > 0) {
-        header.classList.add("bg-green-500");
-        header.classList.remove("bg-accent-200", "bg-accent-500", "bg-yellow-500");
-        contactButton.classList.add("bg-green-700");
-        contactButton.classList.remove("bg-accent-500", "bg-accent-700", "bg-yellow-700");
-    } else if (galleryTop <= 0 && galleryTop + gallerySection.offsetHeight > 0) {
-        header.classList.add("bg-yellow-500");
-        header.classList.remove("bg-accent-200", "bg-accent-500", "bg-green-500");
-        contactButton.classList.add("bg-yellow-700");
-        contactButton.classList.remove("bg-accent-500", "bg-accent-700", "bg-green-700");
-    }
-});
 
 
 
@@ -174,9 +156,47 @@ window.addEventListener('scroll', () => {
 
   //carosal
 
-  new Glide('.glide', {
-    type: 'carousel',
-    perView: 3,
-    gap: 30,
-    autoplay: 5000 // Adjust the interval as needed
-}).mount();
+
+// 
+function filterImages(category) {
+    // First, hide all images
+    var allImages = document.querySelectorAll('#imageContainer img');
+    allImages.forEach(function(img) {
+        img.style.display = 'none';
+    });
+
+    // Then, show only the images with the specified category
+    var filteredImages = document.querySelectorAll('#imageContainer img.' + category);
+    filteredImages.forEach(function(img) {
+        img.style.display = 'block';
+    });
+}
+
+
+    
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Add event listener to toggle the mobile menu when the navbar-toggler button is clicked
+    document.getElementById("navbar-toggler").addEventListener("click", function() {
+        var mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Add event listeners to each menu item to close the mobile menu when clicked
+    var menuItems = document.querySelectorAll("#mobile-menu ul li a");
+    menuItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+            var mobileMenu = document.getElementById("mobile-menu");
+            mobileMenu.classList.add("hidden");
+        });
+    });
+
+    // Add event listener to close the mobile menu when the contact button is clicked (assuming you also want to close it when the contact button is clicked)
+    document.getElementById("contact-button-mobile").addEventListener("click", function() {
+        var mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.add("hidden");
+    });
+});
+
