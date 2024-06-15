@@ -86,14 +86,14 @@ document.addEventListener('DOMContentLoaded', function () {
         2: [
             'assests/images/mehandi/m1.JPG',
             'assests/images/mehandi/m2.jpg',
-            'assests/images/mehandi/m11.jpg',
+            'assests/images/mehandi/m3 (2).jpg',
             'assests/images/mehandi/m4.jpg',
+            'assests/images/mehandi/m11.jpg',
             'assests/images/mehandi/m5.jpg',
             'assests/images/mehandi/m6.jpg',
-            'assests/images/mehandi/m11.jpg',
             'assests/images/mehandi/m8.jpg',
             'assests/images/mehandi/m9.jpg',
-            'assests/images/mehandi/m12.jpg',
+            'assests/images/mehandi/m13.jpg',
         ],
         3: [
             'assests/images/clientimages/c1.jpg',
