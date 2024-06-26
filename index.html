@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <!-- Glide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <!-- Glide JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript"
@@ -58,7 +66,7 @@
                 <button class="ml-auto lg:hidden text-gray-50" id="navbar-toggler">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="flex-1 relative hidden lg::flex items-center justify-center" id="navbar-menu">
+                <div class="flex-1 relative hidden lg:flex items-center justify-center" id="navbar-menu">
                     <ul class="mx-auto inline-flex gap-4 text-sm font-light">
                         <li><a class="text-white hover:text-accent-500 font-bold" href="#Home">Home</a></li>
                         <li><a class="text-white hover:text-accent-500 font-bold" href="#Services">Services</a></li>
@@ -171,7 +179,7 @@
         </div>
     </section> 
 
-    <section class="py-12 bg-black" id="why-us">
+    <section class="py-10 px-4 bg-black" id="why-us">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold text-accent-500">Why Choose Us?</h2>
             <p class="mt-2 text-gray-300 px-4">We've got the freshest designs for Aari and Mehandi that our clients love!
@@ -215,31 +223,40 @@
         </div>
     </section> 
 
-     <section id="Gallery" class="bg-fixed bg-white">
+     <section id="Gallery" class="bg-fixed py-10 px-4 bg-white">
 
-        <div class="container mx-auto  py-6 text-center ">
+        <div class="px-4 text-center">
             <h1 class="text-3xl font-bold mt-8">
                 <span class="text-accent-500">OUR</span>
                 <span style="color: #2e130e;">GALLERY</span>
             </h1>
 
-
-
-            <iframe src="index1.html" width="100%" height="500px" frameborder="0"></iframe>
         </div>
-        </div>
+
+            <iframe src="gallery.html" width="100%" height="600px" frameborder="0"></iframe>
+        
+        
 
     </section>  
     <!-- <section id="Testimonials">
 
     </section> -->
+    <section id="Testimonials" >
+        
+            <iframe src="testimonial.html" width="100%" height="600px" frameborder="0"></iframe>
+
+                    
+</section>
 
     <!-- About Us Section -->
-     <section id="About" class="container mx-auto text-center py-12 px-6 bg-gray-50">
-        <h1 class="text-3xl font-bold ">
-            <span class="text-accent-500">ABOUT</span>
-            <span style="color: #2e130e;">ME</span>
-        </h1>
+     <section id="About" class=" py-10 px-4">
+        <div class="px-4 text-center">
+            <h1 class="text-3xl font-bold mt-8">
+                <span class="text-accent-500">About</span>
+                <span style="color: #2e130e;">Me</span>
+            </h1>
+
+        </div>
         <div class="text-base text-gray-700 my-4 text-center mx-auto max-w-4xl px-4">
             Hertz And Henry Is More Than Just A Project Management Company;
             We Are Your Collaborators In Success. With Years Of Industry Experience, Our Seasoned
@@ -278,12 +295,16 @@
         
 
         <!-- Explore Services Button -->
-        <div class="mt-12">
+        <div class="mt-12 text-center">
             <a  href="tel:+1234567890">
                 <button class="bg-accent-500 text-white py-3 px-6 rounded-md shadow-lg hover:scale-105 hover:brightness-110 transition-transform duration-300">Call Us &rarr;</button>
             </a>
         </div>
     </section> 
+
+    <section>
+       
+    </section>
 
      <section class="text-center py-10 bg-accent-500">
         <h1 class="text-4xl font-bold text-white font-fancy">Instagram - Abi's Design Studio</h1>
@@ -360,5 +381,5 @@
 
 </body>
 <script src="style.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
 </html>

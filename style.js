@@ -200,3 +200,38 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: true,
+        animationDuration: 4000,
+        perView: 1,
+        breakpoints: {
+            768: { perView: 1 },
+            1024: { perView: 2 },
+            1280: { perView: 2 },
+            1536: { perView: 2 }
+        },
+        pagination: {
+            el: '.glide__bullets',
+            clickable: true
+        },
+        navigation: {
+            nextEl: '.glide__arrow--right',
+            prevEl: '.glide__arrow--left'
+        }
+    }).mount();
+});
+
+// const images = ['assests/images/clientimages/c1.jpg', 'img/testimonials/testimonials2.jpg', 'img/testimonials/testimonials3.jpg'];
+// let currentIndex = 0;
+
+// function changeBackground() {
+//     const section = document.getElementById('Testimonials');
+//     section.style.backgroundImage = `url('${images[currentIndex]}')`;
+//     currentIndex = (currentIndex + 1) % images.length;
+// }
+
+// changeBackground();
+
+// setInterval(changeBackground, 500 * 1000);
